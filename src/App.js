@@ -6,9 +6,15 @@ import { Component } from 'react';
 class App extends Component{
   constructor (props){
     super(props)
+    this.handlePClick = this.handlePClick.bind(this)
+
     this.state = {
       name: 'matheus souza'
     }
+  }
+
+  handlePClick() {
+    this.setState({ name: 'outro nome' })
   }
   
   render(){
@@ -17,7 +23,7 @@ class App extends Component{
       <div className="App">
         <header className="App-header">
           <img src={ logo } className="App-logo" alt="logo" />
-          <p onClick={()=> console.log('<p> <p> clicado kkk </p>')}>
+          <p onClick={ this.handlePClick }>
            { name }
           </p>
           <a
@@ -26,7 +32,7 @@ class App extends Component{
            target="_blank"
            rel="noopener noreferrer"
           > 
-           Learn React
+           Este é o link
           </a>
         </header>
      </div>
